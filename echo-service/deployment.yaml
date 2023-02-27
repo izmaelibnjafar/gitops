@@ -8,7 +8,7 @@ metadata:
     tags.datadoghq.com/service: echo-service
     tags.datadoghq.com/version: 1.5.0
 spec:
-  replicas: 5
+  replicas: 3
   revisionHistoryLimit: 3
   selector:
     matchLabels:
