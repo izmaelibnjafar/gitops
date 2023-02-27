@@ -6,7 +6,7 @@ metadata:
     app.kubernetes.io/name: echo-service
     tags.datadoghq.com/env: test
     tags.datadoghq.com/service: echo-service
-    tags.datadoghq.com/version: 1.4.0
+    tags.datadoghq.com/version: 1.5.0
 spec:
   replicas: 5
   revisionHistoryLimit: 3
@@ -24,11 +24,11 @@ spec:
         app.kubernetes.io/name: echo-service
         tags.datadoghq.com/env: test
         tags.datadoghq.com/service: echo-service
-        tags.datadoghq.com/version: 1.4.0
+        tags.datadoghq.com/version: 1.5.0
     spec:
       containers:
       - name: echo-service
-        image: larsaifora/echo-service:1.4.0
+        image: larsaifora/echo-service:1.5.0
         imagePullPolicy: IfNotPresent
         env:
         - name: DD_ENV
