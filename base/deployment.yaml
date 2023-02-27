@@ -1,18 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: echo-service
+  name: price-optimisation
   labels:
-    app.kubernetes.io/name: echo-service
-    tags.datadoghq.com/env: test
-    tags.datadoghq.com/service: echo-service
-    tags.datadoghq.com/version: 1.5.0
+    app.kubernetes.io/name: price-optimisation
+    tags.datadoghq.com/service: price-optimisation
 spec:
-  replicas: 3
+  replicas: 1
   revisionHistoryLimit: 3
   selector:
     matchLabels:
-      app.kubernetes.io/name: echo-service
+      app.kubernetes.io/name: price-optimisation
   strategy:
     type: RollingUpdate
     rollingUpdate:
@@ -21,14 +19,12 @@ spec:
   template:
     metadata:
       labels:
-        app.kubernetes.io/name: echo-service
-        tags.datadoghq.com/env: test
-        tags.datadoghq.com/service: echo-service
-        tags.datadoghq.com/version: 1.5.0
+        app.kubernetes.io/name: price-optimisation
+        tags.datadoghq.com/service: price-optimisation
     spec:
       containers:
-      - name: echo-service
-        image: larsaifora/echo-service:1.5.0
+      - name: price-optimisation
+        image: larsaifora/echo-service
         imagePullPolicy: IfNotPresent
         env:
         - name: DD_ENV
